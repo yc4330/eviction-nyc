@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Story template</title>
-
+    <title>The eviction rate change in NYC</title>
+    
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -25,12 +23,30 @@
             margin: auto;
         }
 
-        .header {
-            padding: 3em 0;
+        .byline{
+            max-width: 800px;
+            margin: auto;
         }
 
+        .header {
+            padding: 1em 0 1em 0;
+            max-width: 800px;
+            margin: auto;
+            text-shadow: 0px 2px 4px #ffffff;
+            color: rgb(0, 0, 0);
+        }
+
+        .subhead {
+            font-family: 'Lora', Georgia, serif;
+            max-width: 800px;
+            margin: auto;
+            text-shadow: 0px 0px 4px rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+        }
+
+
         a {
-            color: #f05349;
+            color: #a40b00;
         }
 
         .footer {
@@ -39,6 +55,14 @@
             font-size: 0.8em;
             margin-top: 4em;
             padding: 4em 0;
+        }
+
+        .credit{
+            text-align: right;
+            margin: 20px;
+            font-size: 0.8em;
+            color: white;
+            text-shadow: 0px 0px 4px rgb(0, 0, 0);
         }
 
         figure {
@@ -60,17 +84,7 @@
             line-height: 1.1;
         }
 
-        .subhead {
-            font-family: 'Lora', Georgia, serif;
-        }
-
-        .full-width figure {
-            text-align: center;
-        }
-
-        iframe,
-        img,
-        video {
+        iframe, img {
             max-width: 100%;
         }
 
@@ -95,104 +109,110 @@
             background: #fff880;
         }
 
+        .row-container {
+            display: flex;
+            flex-direction: row;
+            width: 92%;
+            gap: 2em;
+            justify-content: center;
+            align-items: center;
+            margin: 0 2%;
+        }
+
+        .column-container {
+            flex-grow: 1;
+        }
+
+        .responsive-img1 {
+        background-image: url('doc/chart1.jpg');
+        background-size: 100%;
+        }
+
+        .responsive-img2 {
+        background-image: url('doc/chart2-desktop.jpg');
+        background-size: 100%;
+        }
+
         /* margin on mobile */
         @media (max-width: 640px) {
             body {
                 font-size: 18px;
             }
-
             .content {
                 padding-left: 0.5em;
                 padding-right: 0.5em;
             }
+            .header {
+                padding: 1em 0 1em 0;
+            }
+            .row-container {
+                flex-direction: column;
+            }
+            .responsive-img2 {
+            background-image: url('doc/chart2-mobile.png');
+        }
         }
     </style>
-    <style>
-        .with-image-bg,
-        .with-video-bg {
-            position: relative;
-            background-size: cover;
-            margin-bottom: 2em;
+    </head>
+  <body>
+    
+        <div>
+            <h1 class="header">Eviction rates in NYC down since COVID-19: Why the pandemic changed eviction trends</h1>
+            <p class="subhead">In areas where Hispanic and Black people are the majority race of renters, eviction rates returned up faster.</p>
+            <br>
+            <div class="byline">
+                <p>By Mariam Lobjanidze, <a href="https://yc4330.github.io/">Yuqi Cheng</a></p>
+            </div>
+        </div>
+        <figure><img src="doc/title.jpg"></figure>
 
-            /* Center everything inside */
-            min-height: 70svh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
 
-            /* White text with a shadow */
-            color: white;
-            text-shadow: 0px 0px 30px black,
-                0px 0px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .with-image-bg {
-            background-image: url('bg-image.jpg');
-        }
-
-        .video-background {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .video-background video {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="header with-image-bg">
         <div class="content">
-            <h1>This is the headline of the story you are about to read</h1>
-            <p class="subhead">Unlike the "basic" template, the header text is INSIDE of a .content class so it doesn't
-                get too
-                wide</p>
-        </div>
-    </div>
-    <div class="content">
-        <div class="byline">
-            <p>By <a href="https://jonathansoma.com">Jonathan Soma</a></p>
-        </div>
-        <p>We had to create another <code>class="content"</code> before the byline/after the header so everything would
-            line up okay.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat.</p>
-    </div>
+        
 
-    <div class="header with-video-bg">
-        <div class="video-background">
-            <video src="bg-video.mp4" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
-        </div>
-        <div class="content">
-            <h1>Here is a header with a video background</h1>
-            <p class="subhead">Unlike the "basic" template, the header text is INSIDE of a .content class so it doesn't
-                get too
-                wide</p>
-        </div>
-    </div>
-    <div class="content">
-        <div class="byline">
-            <p>By <a href="https://jonathansoma.com">Jonathan Soma</a></p>
-        </div>
-        <p>We had to create another <code>class="content"</code> before the byline/after the header so everything would
-            line up okay.</p>
-        <p>You can use this for things other than headers if you want, too.</p>
-    </div>
+<p>Eviction numbers are down in New York City compared to pre-pandemic numbers. There have been about 125,000 eviction filings across five boroughs in the last year which is only 55% of the historical average, according to Peter Hepburn, a sociologist and data scientist at Princeton Eviction Lab.</p>
+<p>One of the contributing factors to the decrease is that New Yorkers who are 200% below the poverty line now have the right to counsel meaning that they can be represented by lawyers, which helps tenants navigate the court system. New York City was the first in the country to implement this law in 2017 in a very small number of zip codes, which expanded in each borough over the years. Since executing evictions takes time, the city is seeing the effects of the law post-pandemic.</p>
+<p>“It [the right to counsel] means that tenants have rights that they did not have five or six years ago, but it also means that the process takes longer because the smaller number of [eviction] cases that were filed in 2022 will result in an even smaller share of executed evictions,” Hepburn said.</p>
+<p>In addition to the right to counsel, the city also received COVIDRRP—rental assistance from the federal and state government—during the pandemic. </p>
+<p>During the pandemic, there was a state-wide and federal-level which slowed eviction proceedings. Despite the moratorium, eviction rates were not zero as the law had exceptions, according to Hepburn. When eviction filings started back up again in 2021, there was a long backlog of cases that had come to the courts before and during COVID-19. As a result, we are still seeing low eviction numbers in 2024. </p>
+<p>In census tracts where Hispanic and Black people are the majority race of renters and lower income levels, eviction rates returned fastest to the pre-pandemic levels.</p>
+<p>In New York City, only white, Black, or Hispanic can be a majority race of the renters in a census tract. Among them, the number of evictions in white-dominated areas has dropped the most; in 2023, it only accounts for 37% of the total number of evictions in 2019. </p>
+<p>For areas where tenants are predominately Black, the eviction number of 2023 is about 60% of 2019. The rate is 76% where Hispanic tenants predominate, more than twice that of the white race. </p>
+<figure><img src="doc/compare.jpg"></figure>
+
+<p>According to Hepburn, the racial disparities in eviction rates have existed for a while now.</p>
+<p>Hispanics have the greatest eviction filing rate in 2023, which is twice and three times higher than that of White and Black people, respectively, according to the evictions lab data.</p>
+<p>Based on their analysis of eviction filing rates, all three races have a similar decline of about 50% compared to the average filings in 2016-2018. </p>
+<p>“While there were significant gains during the pandemic [in marginalized communities in the form of rental and legal assistance], they did not erase preexisting racial disparities,” Hepburn said. </p>
+<p>The biggest racial differences before and after COVID-19 seem to be in the process from filing to execution. Eviction filing is a legal step before the eviction execution, which is decided by the housing court hearing. </p>
+<p>In marginalized communities with a higher concentration of Hispanic or Black renters, higher execution rates have been observed, even with free legal assistance.</p>
+<figure><img src="doc/column.jpg"></figure>
+
+<p>Data analysis for 2023 shows that while Hispanic and white tenants see a correlation between execution rate and filing rate, the linear relationship seems to break down in areas with the most black tenants.</p>
+<figure><img src="doc/linear.jpg"></figure>
+
+
+<p>According to Patrick Boyle, senior director of New York Market Office and Community Enterprise, eviction filings rarely lead to evictions, which is why more evictions get filed than actually get executed. He added that landlords file for evictions because they want to push their tenants to seek resources so they can pay rent. </p>
+<p>Boyle said that filing for eviction expedites the process of reaching payment agreements between the landlord and the tenant. This is because sometimes tenants are not responsive unless their case ends up in the housing court or they don’t know how to apply for government resources.</p>
+<p>“When you're in the housing court and so you're as a tenant who's looking for those resources, you're seen as being prioritized because they [the court] want to be sure to be reaching you with those with those funds before it gets to an ultimate eviction,” Boyle said. </p>
+<p>One such resource is One Shot Deal, a program that helps New Yorkers pay their rent and bills if they are experiencing a job loss or an unexpected medical situation. </p>
+<p>“But it's not a good system. I mean, we should not have eviction filings happening just to get people the help they need,” Boyle said.</p>
+<p>He also added that owners in affordable housing are not seeking to evict tenants. </p>
+<p>“These owners, there's no benefit in them for evicting the tenant because the housing that they rent out, it's going to be affordable to another low-income person afterward,” Boyle said.</p>
+<p>He added that the imperfect system makes nonprofit housing organizations more important because they are trying to provide support and resources for people in a more upstream way and without necessitating eviction filings which clog up courts. </p>
+<p>Oksana Miranova, a housing policy analyst from Community Service Society, said that another reason why eviction rates are lower now is because of the passage of the Housing Stability and Tenant Protection Act in 2019 according to which “Owners may no longer apply a 20% increase to an apartment rent upon vacancy.” As a result, landlords have fewer incentives to evict tenants who cannot pay rent.</p>
+<p>“With the passage of the HSPPA, uh, that pressure [to have a high tenancy turnover] was removed a little bit just because they're no longer able to add on rents. it doesn't mean that landlords don't want to evict their tenants in certain situations, it's just like there's less of an economic incentive to do so.”</p>
+<p>The trend moving forward that Miranova pointed out was the fact that since the pandemic there has been an uptick in evictions for people who are moderate income and above the poverty line. </p>
+<p>“Low-income people, even though logically, they would be more vulnerable to evictions, they get resources, they get right to counsel. So they're a little bit less vulnerable to evictions compared to maybe people who are sort of like in the middle,” Miranova said. </p>
+
+
+
+</div>
+    
     <div class="footer">
         <div class="content">
-            <p>You can find the code for this template <a href="https://github.com/jsoma/page-templates/">here</a>.
-                Delete these lines
-                when you use it, and don't forget to change the <code>title</code> tag!!!</p>
+            <p>You can find the code and some data for this project <a href="https://github.com/yc4330/eviction-EDA">here</a>. </p>
         </div>
     </div>
-
 </body>
-
 </html>
